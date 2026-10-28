@@ -1,66 +1,75 @@
-#Supply Chain Risk Detection
-This project explores anomaly detection in supply chain data, enhanced with Large Language Models (LLMs). It combines traditional tabular methods with semantic embeddings from textual logs to better identify fraud and disruption risks.
+Supply Chain Risk Detection
+📌 Overview
+This project explores anomaly detection in supply chain data, enhanced with Large Language Models (LLMs).
+It combines traditional tabular methods with semantic embeddings from textual logs to better identify fraud and disruption risks.
 
-#Project Structure
-
+📂 Project Structure
 notebooks/
 │
 ├── supply_chain_fraud_analysis.ipynb   # main notebook (final pipeline)
 ├── fraud_analysis.py                   # sample script with smaller dataset
-results/     # saved plots, metrics, evaluation outputs
-report/      # final structured report (≤6 pages)
-README.md    # project overview and setup instructions
+results/                                # saved plots, metrics, evaluation outputs
+report/                                 # final structured report (≤6 pages)
+README.md                               # project overview and setup instructions
 
-`notebooks/supply_chain_fraud_analysis.ipynb` : Main notebook containing the final workflow and experiments.
-`notebooks/fraud_analysis.py` : Sample script used for initial testing with a smaller dataset (kept for reference).
+notebooks/supply_chain_fraud_analysis.ipynb → Main notebook containing the final workflow and experiments.
 
+notebooks/fraud_analysis.py → Sample script used for initial testing with a smaller dataset (kept for reference).
 
+results/ → Contains evaluation outputs (plots, metrics, confusion matrices).
 
-#Setup Instructions
+report/ → Includes the final structured report (Report.pdf).
+
+⚙️ Setup Instructions
 Clone the repository
-
-*bash
-git clone https://github.com/Shakirakhadar/supply-chain-risk-detection
+git clone https://github.com/Shakirakhadar/supply-chain-risk-detection  
 cd supply-chain-risk-detection
 
-
 Install dependencies
-
-*bash
 pip install -r requirements.txt
 
+Dataset
+Download the dataset from:
+https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-dataanalysis
 
-Dataset  
-Download the dataset from: https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-dataanalysis
-Place the file in the root folder.
+Place the file in the root folder of the project.
 
-API Key  
+API Key
 This project uses the OpenAI API for embeddings.
-
 Set your key as an environment variable:
 
-*Windows PowerShell: setx OPENAI_API_KEY "your_api_key_here"
-*macOS/Linux: export OPENAI_API_KEY="your_api_key_here"
+Windows PowerShell
+setx OPENAI_API_KEY "your_api_key_here"
 
-Or replace "YOUR_API_KEY_HERE" in the notebook.
+macOS/Linux
+export OPENAI_API_KEY="your_api_key_here"
 
-#Note: Running the notebook requires an active OpenAI account with credits. Without credits, API calls will return a RateLimitError.
+Or replace "YOUR_API_KEY_HERE" directly in the notebook.
 
-#Methodology
+Note: Running the notebook requires an active OpenAI account with credits. Without credits, API calls will return a RateLimitError.
+
+🧠 Methodology
 Baseline: Isolation Forest and Gradient Boosting on numeric features (order amounts, shipping days, delays).
 
 LLM Enhancement: Textual details (order descriptions, customer notes, logs) converted into embeddings and merged with numeric features for hybrid anomaly detection.
 
-#Results
+📊 Results
 Evaluation outputs (plots, metrics, confusion matrices) are saved in the results/ folder.
-The detailed analysis and discussion are available in the report/ directory.
 
-#Reproducibility
+Detailed analysis and discussion are available in the report/ directory.
+
+🔄 Reproducibility
 This repository contains:
 
-Clean, documented notebooks and scripts.
-Dataset link for download.
-Saved metrics and plots.
-A structured project report.
+Jupyter notebooks for experiments (notebooks/)
 
-Anyone with an OpenAI API key and credits can reproduce the experiments end‑to‑end.
+Scripts for reference (fraud_analysis.py)
+
+Generated outputs (results/)
+
+Final report (report/Report.pdf)
+
+Setup instructions (README.md)
+
+👩‍💻 Author
+Shakira Khadar
